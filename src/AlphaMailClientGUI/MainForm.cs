@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,28 +19,21 @@ namespace AlphaMailClientGUI
     {
         private AlphaMailClient.AlphaMailClient.AlphaMailClient client;
         private AlphaMailConfig config;
+        private bool loggedIn = false;
 
         public MainForm(string[] args)
         {
             InitializeComponent();
 
             string configFilePath;
-
-            if (args.Length == 0)
-            {
-                do
-                {
-                    var result = configFileOpener.ShowDialog();
-                    if (result == DialogResult.Cancel)
-                        Environment.Exit(0);
-                }
-                while (!File.Exists(configFileOpener.FileName));
-                configFilePath = configFileOpener.FileName;
-            }
+            string defaultConfigPath = string.Format("{0}\\account.conf", Directory.GetCurrentDirectory());
+            if (File.Exists(defaultConfigPath))
+                configFilePath = defaultConfigPath;
             else
             {
-                if (!File.Exists(args[0]))
+                if (args.Length == 0)
                 {
+
                     do
                     {
                         var result = configFileOpener.ShowDialog();
@@ -50,7 +44,21 @@ namespace AlphaMailClientGUI
                     configFilePath = configFileOpener.FileName;
                 }
                 else
-                    configFilePath = args[0];
+                {
+                    if (!File.Exists(args[0]))
+                    {
+                        do
+                        {
+                            var result = configFileOpener.ShowDialog();
+                            if (result == DialogResult.Cancel)
+                                Environment.Exit(0);
+                        }
+                        while (!File.Exists(configFileOpener.FileName));
+                        configFilePath = configFileOpener.FileName;
+                    }
+                    else
+                        configFilePath = args[0];
+                }
             }
 
             config = AlphaMailConfig.FromFile(configFilePath);
@@ -60,6 +68,11 @@ namespace AlphaMailClientGUI
         private void loginButton_Click(object sender, EventArgs e)
         {
             var result = client.Login(config.Username, config.Password);
+            if (result == AuthResultCode.LoginSuccess)
+            {
+                this.Text = string.Format("AlphaMailClientGUI - Logged In ({0})", config.Username);
+                loggedIn = true;
+            }
             displayAuthResultCode(result);
         }
 
@@ -71,6 +84,12 @@ namespace AlphaMailClientGUI
 
         private void buttonCheck_Click(object sender, EventArgs e)
         {
+            if (!loggedIn)
+            {
+                displayAuthResultCode(AuthResultCode.NotAuthenticated);
+                return;
+            }
+
             var result = client.CheckForMessages();
 
             if (result.Length == 0)
@@ -90,6 +109,12 @@ namespace AlphaMailClientGUI
 
         private void sendButton_Click(object sender, EventArgs e)
         {
+            if (!loggedIn)
+            {
+                displayAuthResultCode(AuthResultCode.NotAuthenticated);
+                return;
+            }
+
             var senderForm = new MessageSenderForm();
             var result = senderForm.ShowDialog();
 
@@ -103,6 +128,21 @@ namespace AlphaMailClientGUI
                     displayMessageResultCode(resultCode);
                     break;
             }
+        }
+
+        private void openConfigMenuItem_Click(object sender, EventArgs e)
+        {
+            var result = configFileOpener.ShowDialog();
+            if (result == DialogResult.Cancel)
+                return;
+            if (!File.Exists(configFileOpener.FileName))
+                return;
+
+            config = AlphaMailConfig.FromFile(configFileOpener.FileName);
+            client = new AlphaMailClient.AlphaMailClient.AlphaMailClient(config.Server, config.Port, config.KeyPair);
+
+            this.Text = "AlphaMailClientGUI - Not Logged In";
+            loggedIn = false;
         }
 
         private void appendLine(string linef = "", params object[] args)

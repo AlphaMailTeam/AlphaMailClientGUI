@@ -34,11 +34,16 @@
             this.buttonCheck = new System.Windows.Forms.Button();
             this.configFileOpener = new System.Windows.Forms.OpenFileDialog();
             this.sendButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openConfigMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(416, 12);
+            this.loginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginButton.Location = new System.Drawing.Point(513, 42);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 0;
@@ -48,7 +53,8 @@
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(497, 12);
+            this.registerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.registerButton.Location = new System.Drawing.Point(604, 42);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(75, 23);
             this.registerButton.TabIndex = 1;
@@ -58,15 +64,16 @@
             // 
             // mainFeed
             // 
-            this.mainFeed.Location = new System.Drawing.Point(167, 41);
+            this.mainFeed.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mainFeed.Location = new System.Drawing.Point(0, 71);
             this.mainFeed.Name = "mainFeed";
-            this.mainFeed.Size = new System.Drawing.Size(405, 334);
+            this.mainFeed.Size = new System.Drawing.Size(679, 390);
             this.mainFeed.TabIndex = 2;
             this.mainFeed.Text = "";
             // 
             // buttonCheck
             // 
-            this.buttonCheck.Location = new System.Drawing.Point(12, 41);
+            this.buttonCheck.Location = new System.Drawing.Point(12, 42);
             this.buttonCheck.Name = "buttonCheck";
             this.buttonCheck.Size = new System.Drawing.Size(75, 23);
             this.buttonCheck.TabIndex = 3;
@@ -80,7 +87,7 @@
             // 
             // sendButton
             // 
-            this.sendButton.Location = new System.Drawing.Point(12, 96);
+            this.sendButton.Location = new System.Drawing.Point(110, 42);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(75, 23);
             this.sendButton.TabIndex = 4;
@@ -88,19 +95,49 @@
             this.sendButton.UseVisualStyleBackColor = true;
             this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(679, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openConfigMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // openConfigMenuItem
+            // 
+            this.openConfigMenuItem.Name = "openConfigMenuItem";
+            this.openConfigMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openConfigMenuItem.Text = "Open";
+            this.openConfigMenuItem.Click += new System.EventHandler(this.openConfigMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 428);
+            this.ClientSize = new System.Drawing.Size(679, 461);
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.mainFeed);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "AlphaMailClientGUI";
+            this.Text = "AlphaMailClientGUI - Not Logged In";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,6 +149,9 @@
         private System.Windows.Forms.Button buttonCheck;
         private System.Windows.Forms.OpenFileDialog configFileOpener;
         private System.Windows.Forms.Button sendButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openConfigMenuItem;
     }
 }
 

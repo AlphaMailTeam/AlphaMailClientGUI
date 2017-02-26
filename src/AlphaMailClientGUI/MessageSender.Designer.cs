@@ -72,9 +72,10 @@
             // 
             // messageBodyBox
             // 
-            this.messageBodyBox.Location = new System.Drawing.Point(96, 108);
+            this.messageBodyBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.messageBodyBox.Location = new System.Drawing.Point(0, 174);
             this.messageBodyBox.Name = "messageBodyBox";
-            this.messageBodyBox.Size = new System.Drawing.Size(391, 208);
+            this.messageBodyBox.Size = new System.Drawing.Size(535, 208);
             this.messageBodyBox.TabIndex = 4;
             this.messageBodyBox.Text = "";
             // 
@@ -89,7 +90,8 @@
             // 
             // sendButton
             // 
-            this.sendButton.Location = new System.Drawing.Point(412, 332);
+            this.sendButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.sendButton.Location = new System.Drawing.Point(448, 145);
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(75, 23);
             this.sendButton.TabIndex = 6;
@@ -99,7 +101,8 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(322, 332);
+            this.cancelButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cancelButton.Location = new System.Drawing.Point(367, 145);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 7;

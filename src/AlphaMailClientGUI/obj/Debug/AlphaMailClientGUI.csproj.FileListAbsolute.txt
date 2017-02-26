@@ -10,3 +10,15 @@ c:\users\misir\AlphaMailClientGUI\AlphaMailClientGUI\obj\Debug\AlphaMailClientGU
 c:\users\misir\AlphaMailClientGUI\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.exe
 c:\users\misir\AlphaMailClientGUI\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.pdb
 c:\users\misir\AlphaMailClientGUI\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.MessageSenderForm.resources
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\bin\Debug\AlphaMailClientGUI.exe.config
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\bin\Debug\AlphaMailClientGUI.exe
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\bin\Debug\AlphaMailClientGUI.pdb
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\bin\Debug\AlphaMailClient.pdb
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.csprojResolveAssemblyReference.cache
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.MainForm.resources
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.MessageSenderForm.resources
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.Properties.Resources.resources
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.csproj.GenerateResource.Cache
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.exe
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.pdb
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\bin\Debug\AlphaMailClient.exe
