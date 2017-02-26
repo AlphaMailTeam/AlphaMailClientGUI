@@ -22,3 +22,4 @@ C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClie
 C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.exe
 C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.pdb
 C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\bin\Debug\AlphaMailClient.exe
+C:\Users\misir\AlphaMailClientGUI\src\AlphaMailClientGUI\obj\Debug\AlphaMailClientGUI.AccountInfo.resources

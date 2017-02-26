@@ -37,6 +37,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openConfigMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitApplicationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountInfoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +101,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(679, 24);
@@ -108,7 +112,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openConfigMenuItem});
+            this.openConfigMenuItem,
+            this.exitApplicationMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -119,6 +124,28 @@
             this.openConfigMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openConfigMenuItem.Text = "Open";
             this.openConfigMenuItem.Click += new System.EventHandler(this.openConfigMenuItem_Click);
+            // 
+            // exitApplicationMenuItem
+            // 
+            this.exitApplicationMenuItem.Name = "exitApplicationMenuItem";
+            this.exitApplicationMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitApplicationMenuItem.Text = "Exit";
+            this.exitApplicationMenuItem.Click += new System.EventHandler(this.exitApplicationMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accountInfoMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // accountInfoMenuItem
+            // 
+            this.accountInfoMenuItem.Name = "accountInfoMenuItem";
+            this.accountInfoMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accountInfoMenuItem.Text = "Account Info";
+            this.accountInfoMenuItem.Click += new System.EventHandler(this.accountInfoMenuItem_Click);
             // 
             // MainForm
             // 
@@ -152,6 +179,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openConfigMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitApplicationMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountInfoMenuItem;
     }
 }
 

@@ -145,6 +145,17 @@ namespace AlphaMailClientGUI
             loggedIn = false;
         }
 
+        private void exitApplicationMenuItem_Click(object sender, EventArgs e)
+        {
+            client = null;
+            Environment.Exit(0);
+        }
+
+        private void accountInfoMenuItem_Click(object sender, EventArgs e)
+        {
+            new AccountInfo(config).ShowDialog();
+        }
+
         private void appendLine(string linef = "", params object[] args)
         {
             if (args.Length == 0)
